@@ -174,6 +174,9 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
             case R.id.menu_review:
                 // TODO: 리뷰
                 break;
+            case R.id.add_data:
+                startActivity(new Intent(MainActivity.this, add.class));
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

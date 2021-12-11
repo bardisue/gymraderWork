@@ -28,7 +28,7 @@
         <activity android:name=".SearchActivity"/>
         <activity android:name=".Info"/>
         <activity android:name=".EditEquipment"/>
-
+        <activity android:name=".add"/>
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="c7c87702be619b390ae59d2b201ae0de" />

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_add.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_add_training_center.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_editequipment.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_editprogram.xml" value="0.35643115942028986" />
@@ -16,6 +17,8 @@
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/equipment_listview.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/program_listview.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/row_listview.xml" value="0.2046875" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/menu/add.xml" value="0.19739583333333333" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/menu/main.xml" value="0.19739583333333333" />
       </map>
     </option>
   </component>

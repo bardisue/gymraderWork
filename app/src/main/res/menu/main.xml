@@ -22,4 +22,8 @@
     <item android:title="리뷰"
         android:id="@+id/menu_review"
         app:showAsAction="withText" />
+
+    <item android:title="데이터추가임시"
+        android:id="@+id/add_data"
+        app:showAsAction="withText" />
 </menu>
