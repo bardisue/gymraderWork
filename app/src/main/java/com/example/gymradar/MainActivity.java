@@ -164,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
 
             case R.id.menu_search:
                 // TODO: 검색
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
 
             case R.id.menu_recommend:

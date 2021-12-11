@@ -22,7 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button join_button, check_button;
     private AlertDialog dialog;
     private boolean validate = false;
-    DBHelper3 dbHelper3;
+    DBHelper3 DBHelper3;
 
 
     @Override
@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         join_password = findViewById( R.id.join_password );
         join_name = findViewById( R.id.join_name );
         join_pwck = findViewById(R.id.join_pwck);
-        dbHelper3 = new DBHelper3(RegisterActivity.this, 1);
+        DBHelper3 = new DBHelper3(RegisterActivity.this, 1);
 
 
         //아이디 중복 체크
@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
-                if(dbHelper3.getIds().contains(UserEmail)){
+                if(DBHelper3.getIds().contains(UserEmail)){
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     dialog = builder.setMessage("이미 존재하는 아이디입니다.").setNegativeButton("확인", null).create();
                     dialog.show();
@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
-                dbHelper3.insert(UserEmail,UserPwd, UserName);
+                DBHelper3.insert(UserEmail,UserPwd, UserName);
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 Toast.makeText( getApplicationContext(), "회원가입에 성공했습니다.", Toast.LENGTH_SHORT ).show();
                 startActivity(intent);
