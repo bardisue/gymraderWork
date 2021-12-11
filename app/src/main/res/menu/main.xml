@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="트래킹 모드"
+        android:id="@+id/tracking_mode"
+        app:showAsAction="always"
+        android:icon="@drawable/gps_fixed"/>
+
+    <item android:title="트레이닝 센터 등록"
+        android:id="@+id/menu_add_training_center"
+        app:showAsAction="withText" />
+
+    <item android:title="검색"
+        android:id="@+id/menu_search"
+        app:showAsAction="withText" />
+
+    <item android:title="추천 받기"
+        android:id="@+id/menu_recommend"
+        app:showAsAction="withText" />
+
+    <item android:title="리뷰"
+        android:id="@+id/menu_review"
+        app:showAsAction="withText" />
+</menu>
