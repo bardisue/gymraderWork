@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.location.LocationManager;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -16,10 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
 
-public class MainActivity extends AppCompatActivity implements MapView.MapViewEventListener{
+public class MainActivity extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
 
     private static final String LOG_TAG = "MainActivity";
     private MapView mapView;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
     String[] REQUIRED_PERMISSIONS  = {Manifest.permission.ACCESS_FINE_LOCATION};
+    private DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +52,28 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
         mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
         mapView.setMapViewEventListener(this);
+        mapView.setPOIItemEventListener(this);
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
+        showTrainingCenterMarker();
+    }
+
+    public void showTrainingCenterMarker() {
+        db = new DBHelper(this, 1);
+        Cursor cursor = db.getTC();
+        while(cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            double latitude = cursor.getDouble(2);
+            double longitude = cursor.getDouble(3);
+            MapPoint mapPoint = MapPoint.mapPointWithGeoCoord(latitude, longitude);
+            MapPOIItem marker = new MapPOIItem();
+            marker.setItemName(name);
+            marker.setTag(id);
+            marker.setMapPoint(mapPoint);
+            marker.setMarkerType(MapPOIItem.MarkerType.BluePin);
+            marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin);
+            mapView.addPOIItem(marker);
+        }
     }
 
     @Override
@@ -150,6 +175,26 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onPOIItemSelected(MapView mapView, MapPOIItem mapPOIItem) {
+
+    }
+
+    @Override
+    public void onCalloutBalloonOfPOIItemTouched(MapView mapView, MapPOIItem mapPOIItem) {
+        // TODO: MapPOIItem의 tag정보를 정보확인 액티비티에 넘김
+    }
+
+    @Override
+    public void onCalloutBalloonOfPOIItemTouched(MapView mapView, MapPOIItem mapPOIItem, MapPOIItem.CalloutBalloonButtonType calloutBalloonButtonType) {
+
+    }
+
+    @Override
+    public void onDraggablePOIItemMoved(MapView mapView, MapPOIItem mapPOIItem, MapPoint mapPoint) {
+
     }
 
     // GPS Permission 관련 함수들

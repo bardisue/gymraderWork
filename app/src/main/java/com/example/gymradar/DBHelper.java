@@ -26,7 +26,7 @@ class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }//변경된 부분이 있으면 작동
 
-    public void insertTC(String name, float coordinateX, float coordinateY, String addr) {
+    public void insertTC(String name, double coordinateX, double coordinateY, String addr) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM TrainingCenter", null);
         cursor.moveToFirst();
@@ -45,7 +45,7 @@ class DBHelper extends SQLiteOpenHelper {
     }//Insert문 해당 table에 넣는다. NUM타입의 경우 " + 변수 + " 형태로, 문자열의 경우 '" + 변수 "' 형태로 넣을것
 
 
-    public void updateTC(Integer id, String name, float coordinateX, float coordinateY, String addr) {
+    public void updateTC(Integer id, String name, double coordinateX, double coordinateY, String addr) {
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("UPDATE TrainingCenter SET NAME = '"+name+"',ADDR = '" +addr+ "' ,COORDINATEX = " + coordinateX + ", COORDINATEY = " + coordinateY + "" + " WHERE ID = '" + id + "'");
         db.close();
@@ -66,4 +66,11 @@ class DBHelper extends SQLiteOpenHelper {
         }
         return result;
     }
+
+    public Cursor getTC() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM TrainingCenter", null);
+        return cursor;
+    }
+
 }
