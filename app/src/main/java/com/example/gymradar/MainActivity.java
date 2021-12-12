@@ -189,6 +189,9 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
     @Override
     public void onCalloutBalloonOfPOIItemTouched(MapView mapView, MapPOIItem mapPOIItem) {
         // TODO: MapPOIItem의 tag정보를 정보확인 액티비티에 넘김
+        Intent intent = new Intent(MainActivity.this, Info.class);
+        intent.putExtra("center_id", mapPOIItem.getTag());
+        startActivity(intent);
     }
 
     @Override
