@@ -37,7 +37,9 @@ public class AddTrainingCenterActivity extends AppCompatActivity implements MapV
     }
 
     public void showTrainingCenterMarker() {
+
         db = new DBHelper(this, 2);
+
         Cursor cursor = db.getTC();
         while(cursor.moveToNext()) {
             int id = cursor.getInt(0);
