@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="40dp">
+
+    <TextView
+        android:id="@+id/review_centerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:text="트레이닝 센터 A"/>
+
+    <RatingBar
+        android:id="@+id/review_starPoint"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/review_content"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:padding="10dp"
+        android:gravity="start"
+        android:hint="리뷰 내용을 입력하세요" />
+
+    <Button
+        android:id="@+id/review_submitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="등록"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

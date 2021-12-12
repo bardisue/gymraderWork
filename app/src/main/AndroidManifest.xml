@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymRadar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".InsertInfoActivity"></activity>
+        <activity android:name=".ReviewActivity"></activity>
+        <activity android:name=".InsertInfoActivity" />
         <activity android:name=".AddTrainingCenterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -24,11 +25,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".SearchActivity"/>
-        <activity android:name=".Info"/>
-        <activity android:name=".EditEquipment"/>
-        <activity android:name=".add"/>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".Info" />
+        <activity android:name=".EditEquipment" />
+        <activity android:name=".add" />
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="c7c87702be619b390ae59d2b201ae0de" />
