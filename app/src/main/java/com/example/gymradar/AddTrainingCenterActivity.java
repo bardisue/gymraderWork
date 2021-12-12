@@ -1,12 +1,15 @@
 package com.example.gymradar;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+
+import net.daum.mf.map.api.MapPOIItem;
 import net.daum.mf.map.api.MapPoint;
 import net.daum.mf.map.api.MapView;
 
@@ -14,6 +17,7 @@ public class AddTrainingCenterActivity extends AppCompatActivity implements MapV
 
     private MapView mapView;
     private ViewGroup mapViewContainer;
+    private DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,26 @@ public class AddTrainingCenterActivity extends AppCompatActivity implements MapV
         mapViewContainer.addView(mapView);
         mapView.setMapViewEventListener(this);
         mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
+        showTrainingCenterMarker();
+    }
+
+    public void showTrainingCenterMarker() {
+        db = new DBHelper(this, 1);
+        Cursor cursor = db.getTC();
+        while(cursor.moveToNext()) {
+            int id = cursor.getInt(0);
+            String name = cursor.getString(1);
+            double latitude = cursor.getDouble(2);
+            double longitude = cursor.getDouble(3);
+            MapPoint mapPoint = MapPoint.mapPointWithGeoCoord(latitude, longitude);
+            MapPOIItem marker = new MapPOIItem();
+            marker.setItemName(name);
+            marker.setTag(id);
+            marker.setMapPoint(mapPoint);
+            marker.setMarkerType(MapPOIItem.MarkerType.BluePin);
+            marker.setShowCalloutBalloonOnTouch(false);
+            mapView.addPOIItem(marker);
+        }
     }
 
     @Override
