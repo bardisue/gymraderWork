@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
 
     private static final String LOG_TAG = "MainActivity";
     private MapView mapView;
+    private MapPoint mCurrentLocation = null;
     private ViewGroup mapViewContainer;
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_CODE = 100;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
     }
 
     public void showTrainingCenterMarker() {
-        db = new DBHelper(this, 1);
+        db = new DBHelper(this, 2);
         Cursor cursor = db.getTC();
         while(cursor.moveToNext()) {
             int id = cursor.getInt(0);
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
                     mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
                     Toast.makeText(MainActivity.this, "Tracking mode on", Toast.LENGTH_SHORT).show();
                     item.setIcon(R.drawable.gps_off);
+                    mCurrentLocation = mapView.getMapCenterPoint();
                 }
                 else {
                     mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOff);
@@ -176,6 +178,9 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
                 break;
             case R.id.add_data:
                 startActivity(new Intent(MainActivity.this, add.class));
+                break;
+            case R.id.current_location:
+                Toast.makeText(MainActivity.this, Double.toString(mCurrentLocation.getMapPointGeoCoord().latitude) + Double.toString(mCurrentLocation.getMapPointGeoCoord().longitude) , Toast.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -319,4 +324,5 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
+
 }

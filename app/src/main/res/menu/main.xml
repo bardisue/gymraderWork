@@ -26,4 +26,8 @@
     <item android:title="데이터추가임시"
         android:id="@+id/add_data"
         app:showAsAction="withText" />
+
+    <item android:title="현재위치호출"
+        android:id="@+id/current_location"
+        app:showAsAction="withText" />
 </menu>

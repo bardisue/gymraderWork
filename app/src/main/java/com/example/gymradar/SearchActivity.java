@@ -108,7 +108,7 @@ public class SearchActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
     private void settingList(){
-        db = new DBHelper(SearchActivity.this, 1);
+        db = new DBHelper(SearchActivity.this, 2);
 
         list =db.getResultTC();
     }

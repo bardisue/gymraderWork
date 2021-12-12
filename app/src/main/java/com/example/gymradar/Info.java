@@ -41,7 +41,7 @@ public class Info extends AppCompatActivity {
         int center_id = intent.getExtras().getInt("center_id");
 
         //DB에서 정보 받아오기
-        centerDBHelper = new DBHelper(this, 1);
+        centerDBHelper = new DBHelper(this, 2);
         sqlDB = centerDBHelper.getReadableDatabase();
         Cursor cursor = sqlDB.rawQuery("SELECT * FROM TrainingCenter WHERE id = " + center_id +"", null);
         cursor.moveToFirst();
@@ -55,6 +55,7 @@ public class Info extends AppCompatActivity {
         while(cursor.moveToNext()){
             program_adapter.addItemToList(cursor.getString(2),cursor.getString(3), cursor.getInt(4));
         }
+
         program_list.setAdapter(program_adapter);
 
         equipmentDBHelper = new DBHelper4(this, 1);

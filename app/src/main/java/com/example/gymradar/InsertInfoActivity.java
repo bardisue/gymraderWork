@@ -37,7 +37,7 @@ public class InsertInfoActivity extends AppCompatActivity implements MapReverseG
         geoCoder = new MapReverseGeoCoder("c7c87702be619b390ae59d2b201ae0de", mapPoint,
                 InsertInfoActivity.this, InsertInfoActivity.this);
         geoCoder.startFindingAddress();
-        dbHelper = new DBHelper(InsertInfoActivity.this, 1);
+        dbHelper = new DBHelper(InsertInfoActivity.this, 2);
         btnModify = findViewById(R.id.insert_btn);
         edtName = findViewById(R.id.input_name);
 

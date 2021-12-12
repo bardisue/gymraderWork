@@ -47,7 +47,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_marginRight="20dp"
-            android:text="1개월"
+            android:text="이용권 1개월"
             android:textSize="20dp"/>
 
         <EditText
