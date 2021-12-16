@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
                 break;
 
             case R.id.menu_recommend:
+                startActivity(new Intent(MainActivity.this, RecommendActivity.class));
                 // TODO: 추천 받기
                 break;
 
