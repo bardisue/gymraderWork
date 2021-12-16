@@ -19,6 +19,7 @@ public class Info extends AppCompatActivity {
     DBHelper centerDBHelper;
     DBHelper2 programDBHelper;
     DBHelper4 equipmentDBHelper;
+   // DBHelper5 reviewDBHelper;
     TextView center_name;
     ListView program_list;
     ListView equipment_list;
@@ -67,6 +68,18 @@ public class Info extends AppCompatActivity {
         }
         equipment_list.setAdapter(equipment_adapter);
 
+        program_list.setAdapter(program_adapter);
+
+       // reviewDBHelper = new DBHelper5(this, 1);
+       // equipmentDB = reviewDBHelper.getReadableDatabase();
+       // cursor = reviewDBHelper.rawQuery("SELECT * FROM review WHERE center_id = " + center_id +"", null);
+        //ReviewAdapter review_adapter = new ReviewAdapter();
+        //while(cursor.moveToNext()){
+        //    review_adapter.addItemToList(cursor.getString(2), cursor.getInt(3));
+        //}
+        //equipment_list.setAdapter(equipment_adapter);
+
+
 
         editProgram.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +102,9 @@ public class Info extends AppCompatActivity {
         writeReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+                intent.putExtra("center_id",center_id);
+                startActivity(intent);
             }
         });
     }

@@ -24,10 +24,11 @@ public class ReviewActivity extends AppCompatActivity {
 
         int centerID = getIntent().getExtras().getInt("center_id");
 
-        db = new DBHelper(this, 1);
+        db = new DBHelper(this, 2);
         db5 = new DBHelper5(this, 1);
 
         Cursor cursor = db.getReadableDatabase().rawQuery("SELECT NAME FROM TrainingCenter WHERE ID = " + centerID, null);
+        cursor.moveToFirst();
         String center_name = cursor.getString(0);
 
         ((TextView) findViewById(R.id.review_centerName)).setText(center_name);
