@@ -31,6 +31,7 @@
         <activity android:name=".EditProgram"/>
         <activity android:name=".EditEquipment" />
         <activity android:name=".add" />
+        <activity android:name="RecommendActivity"/>
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
