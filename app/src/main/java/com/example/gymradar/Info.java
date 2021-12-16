@@ -16,10 +16,11 @@ public class Info extends AppCompatActivity {
     SQLiteDatabase sqlDB;
     SQLiteDatabase programDB;
     SQLiteDatabase equipmentDB;
+    SQLiteDatabase reviewDB;
     DBHelper centerDBHelper;
     DBHelper2 programDBHelper;
     DBHelper4 equipmentDBHelper;
-   // DBHelper5 reviewDBHelper;
+    DBHelper5 reviewDBHelper;
     TextView center_name;
     ListView program_list;
     ListView equipment_list;
@@ -56,7 +57,6 @@ public class Info extends AppCompatActivity {
         while(cursor.moveToNext()){
             program_adapter.addItemToList(cursor.getString(2),cursor.getString(3), cursor.getInt(4));
         }
-
         program_list.setAdapter(program_adapter);
 
         equipmentDBHelper = new DBHelper4(this, 1);
@@ -68,16 +68,14 @@ public class Info extends AppCompatActivity {
         }
         equipment_list.setAdapter(equipment_adapter);
 
-        program_list.setAdapter(program_adapter);
-
-       // reviewDBHelper = new DBHelper5(this, 1);
-       // equipmentDB = reviewDBHelper.getReadableDatabase();
-       // cursor = reviewDBHelper.rawQuery("SELECT * FROM review WHERE center_id = " + center_id +"", null);
+       reviewDBHelper = new DBHelper5(this, 1);
+       reviewDB = reviewDBHelper.getReadableDatabase();
+       cursor = reviewDB.rawQuery("SELECT * FROM review WHERE center_id = " + center_id +"", null);
         //ReviewAdapter review_adapter = new ReviewAdapter();
         //while(cursor.moveToNext()){
         //    review_adapter.addItemToList(cursor.getString(2), cursor.getInt(3));
         //}
-        //equipment_list.setAdapter(equipment_adapter);
+        //review_list.setAdapter(review_adapter);
 
 
 
