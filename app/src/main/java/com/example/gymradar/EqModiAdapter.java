@@ -35,11 +35,21 @@ public class EqModiAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         final Context context = viewGroup.getContext();
+        final ViewHolder holder;
 
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.eqmodi_listview,viewGroup,false);
+            holder = new ViewHolder();
+            holder.editText1 = (EditText) view.findViewById(R.id.editeq_name);
+            holder.editText2 = (EditText) view.findViewById(R.id.editeq_count);
+            view.setTag(holder);
         }
+        else{
+            holder = (ViewHolder) view.getTag();
+        }
+
+        holder.ref = i;
 
         //이제 아이템에 존재하는 텍스트뷰 객체들을 view객체에서 찾아 가져온다
         EditText etName = (EditText) view.findViewById(R.id.editeq_name);
@@ -49,8 +59,8 @@ public class EqModiAdapter extends BaseAdapter {
         EquipmentListViewAdapterData listdata = list.get(i);
 
         //가져온 객체안에 있는 글자들을 각 뷰에 적용한다
-        etName.setText(listdata.getName());
-        etCount.setText(Integer.toString(listdata.getCount())); //원래 int형이라 String으로 형 변환
+        holder.editText1.setText(listdata.getName());
+        holder.editText2.setText(Integer.toString(listdata.getCount())); //원래 int형이라 String으로 형 변환
 
         Button delButton = (Button) view.findViewById(R.id.editeq_delete);
         delButton.setOnClickListener(new Button.OnClickListener(){
@@ -59,7 +69,7 @@ public class EqModiAdapter extends BaseAdapter {
             }
         });
 
-        etName.addTextChangedListener(new TextWatcher() {
+        holder.editText1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -72,11 +82,11 @@ public class EqModiAdapter extends BaseAdapter {
 
             @Override
             public void afterTextChanged(Editable s) {
-                listdata.setName(s.toString());
+                list.get(holder.ref).setName(s.toString());
             }
         });
 
-        etCount.addTextChangedListener(new TextWatcher() {
+        holder.editText2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -91,7 +101,7 @@ public class EqModiAdapter extends BaseAdapter {
             public void afterTextChanged(Editable s) {
                 String str = s.toString();
                 if(!str.isEmpty()){
-                    listdata.setCount(Integer.parseInt(str));
+                    list.get(holder.ref).setCount(Integer.parseInt(str));
                 }
             }
         });
@@ -114,6 +124,5 @@ public class EqModiAdapter extends BaseAdapter {
             notifyDataSetChanged();
         }
     }
-
 
 }
