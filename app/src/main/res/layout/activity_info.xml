@@ -50,7 +50,7 @@
                 <ListView
                     android:id="@+id/program_list"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="60dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 <ListView
                     android:id="@+id/equipment_list"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="60dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
