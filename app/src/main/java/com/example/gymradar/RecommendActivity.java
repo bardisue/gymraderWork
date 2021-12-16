@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RecommendActivity extends AppCompatActivity {
     TextView textView;
+    private int latitude;
+    private int longitude;
 
     String[] items = {"거리", "시설", "리뷰"};
 
@@ -19,7 +21,7 @@ public class RecommendActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
 
-        textView = (TextView) findViewById(R.id.textView);
+        //textView = (TextView) findViewById(R.id.textView);
 
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner_1);
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner_2);
@@ -39,34 +41,34 @@ public class RecommendActivity extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(items[position]);
+               // textView.setText(items[position]);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                textView.setText("선택 : ");
+                //textView.setText("선택 : ");
             }
         });
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(items[position]);
+              //  textView.setText(items[position]);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                textView.setText("선택 : ");
+                //textView.setText("선택 : ");
             }
         });
         spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                textView.setText(items[position]);
+               // textView.setText(items[position]);
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                textView.setText("선택 : ");
+                //textView.setText("선택 : ");
             }
         });
     }

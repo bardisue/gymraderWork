@@ -3,142 +3,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
+        android:layout_width="414dp"
+        android:layout_height="605dp"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
             android:gravity="center"
-            android:text="1순위"
-            android:textSize="20dp" />
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
 
-        <Spinner
-            android:id="@+id/spinner_1"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:textSize="15dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="1순위"
+                android:textSize="20dp" />
 
+            <Spinner
+                android:id="@+id/spinner_1"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="69dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="2순위"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/spinner_2"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:hint=""
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="146dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="3순위"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/spinner_3"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:hint=""
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="226dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="원하는 기구를 입력해주세요."
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="297dp">
+
+            <EditText
+                android:layout_width="107dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="입력"
+                android:textSize="20dp" />
+
+            <EditText
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="입력"
+                android:textSize="20dp" />
+
+            <EditText
+                android:layout_width="123dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="입력"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:text="제출"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="463dp" />
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="69dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="2순위"
-            android:textSize="20dp" />
-
-        <Spinner
-            android:id="@+id/spinner_2"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:hint=""
-            android:textSize="15dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="146dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="3순위"
-            android:textSize="20dp" />
-
-        <Spinner
-            android:id="@+id/spinner_3"
-            android:layout_width="200dp"
-            android:layout_height="match_parent"
-            android:hint=""
-            android:textSize="15dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="226dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="원하는 기구를 입력해주세요."
-            android:textSize="20dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="297dp">
-
-        <EditText
-            android:layout_width="107dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="입력"
-            android:textSize="20dp" />
-
-        <EditText
-            android:layout_width="110dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="입력"
-            android:textSize="20dp" />
-
-        <EditText
-            android:layout_width="123dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:gravity="center"
-            android:text="입력"
-            android:textSize="20dp" />
-
-    </LinearLayout>
-
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:text="제출"
-        tools:layout_editor_absoluteX="170dp"
-        tools:layout_editor_absoluteY="463dp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
