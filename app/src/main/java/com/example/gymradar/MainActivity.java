@@ -25,6 +25,8 @@ import net.daum.mf.map.api.MapView;
 public class MainActivity extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
 
     private static final String LOG_TAG = "MainActivity";
+    private static String loginedId;
+    private static String loginedName;
     private MapView mapView;
     private MapPoint mCurrentLocation = null;
     private ViewGroup mapViewContainer;
@@ -35,6 +37,16 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        loginedId = null;
+        Intent secondIntent = getIntent();
+        loginedId = secondIntent.getStringExtra("UserEmail");//로그인한 이메일
+        loginedName = secondIntent.getStringExtra("UserName");//로그인한 이름
+        if(loginedId != null){
+            Toast.makeText(this.getApplicationContext(),loginedName+"님 환영합니다!", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this.getApplicationContext(),"guest로 로그인하셨습니다.", Toast.LENGTH_SHORT).show();
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

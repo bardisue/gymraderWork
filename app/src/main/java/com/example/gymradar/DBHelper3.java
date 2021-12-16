@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class DBHelper3 extends SQLiteOpenHelper {
-    static final String DATABASE_NAME = "test4.db";
+    static final String DATABASE_NAME = "test3.db";
 
     public DBHelper3(Context context, int version) {
         super(context, DATABASE_NAME, null, version);

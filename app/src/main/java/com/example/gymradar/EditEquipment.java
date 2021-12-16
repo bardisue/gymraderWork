@@ -60,9 +60,5 @@ public class EditEquipment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        Toolbar toolbar = findViewById(R.id.editeq_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

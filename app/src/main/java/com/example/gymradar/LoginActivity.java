@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     String UserName = dbHelper3.getUsername(UserEmail);
 
-                    Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", UserName), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), String.format("%s님 환영합니다.", UserName), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
 
                     intent.putExtra("UserEmail", UserEmail);
