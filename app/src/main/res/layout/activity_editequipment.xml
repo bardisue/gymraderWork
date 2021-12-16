@@ -8,14 +8,19 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/editeq_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="#FFAC07"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"/>
 
         <ListView
             android:id="@+id/eqmodi_listview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp" />
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:id="@+id/addList"
@@ -23,5 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="40dp"/>
+
+        <Button
+            android:id="@+id/saveEq"
+            android:text="저장"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

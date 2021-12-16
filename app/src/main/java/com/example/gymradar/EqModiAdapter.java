@@ -1,13 +1,14 @@
 package com.example.gymradar;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -35,16 +36,14 @@ public class EqModiAdapter extends BaseAdapter {
 
         final Context context = viewGroup.getContext();
 
-        //리스트뷰에 아이템이 인플레이트 되어있는지 확인한후
-        //아이템이 없다면 아래처럼 아이템 레이아웃을 인플레이트 하고 view객체에 담는다.
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            view = inflater.inflate(R.layout.equipment_listview,viewGroup,false);
+            view = inflater.inflate(R.layout.eqmodi_listview,viewGroup,false);
         }
 
         //이제 아이템에 존재하는 텍스트뷰 객체들을 view객체에서 찾아 가져온다
-        EditText etName = (EditText) view.findViewById(R.id.name);
-        EditText etCount = (EditText) view.findViewById(R.id.count);
+        EditText etName = (EditText) view.findViewById(R.id.editeq_name);
+        EditText etCount = (EditText) view.findViewById(R.id.editeq_count);
 
         //현재 포지션에 해당하는 아이템에 글자를 적용하기 위해 list배열에서 객체를 가져온다.
         EquipmentListViewAdapterData listdata = list.get(i);
@@ -53,10 +52,47 @@ public class EqModiAdapter extends BaseAdapter {
         etName.setText(listdata.getName());
         etCount.setText(Integer.toString(listdata.getCount())); //원래 int형이라 String으로 형 변환
 
-        Button delButton = (Button) view.findViewById(R.id.delete);
+        Button delButton = (Button) view.findViewById(R.id.editeq_delete);
         delButton.setOnClickListener(new Button.OnClickListener(){
             public void onClick(View v){
                 deleteItem(i);
+            }
+        });
+
+        etName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                listdata.setName(s.toString());
+            }
+        });
+
+        etCount.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String str = s.toString();
+                if(!str.isEmpty()){
+                    listdata.setCount(Integer.parseInt(str));
+                }
             }
         });
 
@@ -75,6 +111,9 @@ public class EqModiAdapter extends BaseAdapter {
     public void deleteItem(int i){
         if(list.size() > i){
             list.remove(i);
+            notifyDataSetChanged();
         }
     }
+
+
 }
