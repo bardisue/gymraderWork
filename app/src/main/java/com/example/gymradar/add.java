@@ -42,7 +42,7 @@ public class add extends AppCompatActivity implements MapReverseGeoCoder.Reverse
             @Override
             public void onClick(View v) {
                 //public void insertProgram(int center_id, String name, String period, int price)
-                dbHelper2.insertProgram(Integer.parseInt(edtName.getText().toString()), "이용권", "1개월", Integer.parseInt(input_1month.getText().toString()));
+                //dbHelper2.insertProgram(Integer.parseInt(edtName.getText().toString()), "이용권", "1개월", Integer.parseInt(input_1month.getText().toString()));
                 //dbHelper4.insertEquipment(Integer.parseInt(edtName.getText().toString()), machine.getText().toString(),Integer.parseInt(machine_num.getText().toString()));
                 startActivity(new Intent(add.this, MainActivity.class));
             }

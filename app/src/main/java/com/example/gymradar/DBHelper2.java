@@ -23,21 +23,9 @@ class DBHelper2 extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void insertProgram(int center_id, String name, String period, int price) {
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM program", null);
-        cursor.moveToFirst();
-        int n = cursor.getInt(0);
-        int id;
-        for(id=0;id<n;id++){
-            cursor = db.rawQuery("SELECT EXISTS(SELECT 1 FROM program WHERE (center_id = "+center_id+" & pg_id = "+id+"))", null);
-            cursor.moveToFirst();
-            if(cursor.getInt(0) == 0){ //id가 id인 행이 없을때
-                break;
-            }
-        }
-        db = getWritableDatabase();
-        db.execSQL("INSERT INTO program VALUES("+ center_id +","+id+",'" + name + "', '" + period + "', '" + price + "')");
+    public void insertProgram(int center_id, int pg_id, String name, String period, int price) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT INTO program VALUES("+ center_id +","+pg_id+",'" + name + "', '" + period + "', '" + price + "')");
         db.close();
     }
 
@@ -48,9 +36,9 @@ class DBHelper2 extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void deleteProgram(int center_id, int pg_id) {
+    public void deleteProgram(int center_id) {
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM program WHERE center_id = " + center_id + " AND pg_id = "+pg_id+"");
+        db.execSQL("DELETE FROM program WHERE center_id = " + center_id + "");
         db.close();
     }
 

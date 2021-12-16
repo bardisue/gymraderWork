@@ -71,7 +71,9 @@ public class Info extends AppCompatActivity {
         editProgram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), EditProgram.class);
+                intent.putExtra("center_id",center_id);
+                startActivity(intent);
             }
         });
 
