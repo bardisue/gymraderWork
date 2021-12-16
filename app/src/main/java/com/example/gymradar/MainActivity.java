@@ -25,8 +25,8 @@ import net.daum.mf.map.api.MapView;
 public class MainActivity extends AppCompatActivity implements MapView.MapViewEventListener, MapView.POIItemEventListener{
 
     private static final String LOG_TAG = "MainActivity";
-    private static String loginedId;
-    private static String loginedName;
+    public static String loginedId;
+    public static String loginedName;
     private MapView mapView;
     private MapPoint mCurrentLocation = null;
     private ViewGroup mapViewContainer;
