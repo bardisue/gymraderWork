@@ -183,8 +183,8 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
 
             case R.id.menu_recommend:
                 Intent intent = new Intent(MainActivity.this, RecommendActivity.class);
-                intent.putExtra("latitude", mCurrentLocation.getMapPointGeoCoord().latitude);
-                intent.putExtra("longitude", mCurrentLocation.getMapPointGeoCoord().longitude);
+                intent.putExtra("latitude", Double.toString(mCurrentLocation.getMapPointGeoCoord().latitude));
+                intent.putExtra("longitude", Double.toString(mCurrentLocation.getMapPointGeoCoord().longitude));
                 startActivity(intent);
                 // TODO: 추천 받기
                 break;

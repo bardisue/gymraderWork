@@ -24,7 +24,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
-                android:text="1순위"
+                android:text="거리"
                 android:textSize="20dp" />
 
             <Spinner
@@ -49,7 +49,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
-                android:text="2순위"
+                android:text="점수"
                 android:textSize="20dp" />
 
             <Spinner
@@ -75,7 +75,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:gravity="center"
-                android:text="3순위"
+                android:text="기구"
                 android:textSize="20dp" />
 
             <Spinner
@@ -116,6 +116,7 @@
             tools:layout_editor_absoluteY="297dp">
 
             <EditText
+                android:id="@+id/equip_1"
                 android:layout_width="107dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
@@ -124,6 +125,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/equip_2"
                 android:layout_width="110dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
@@ -132,6 +134,7 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/equip_3"
                 android:layout_width="123dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
@@ -142,6 +145,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_recommend"
             android:layout_width="70dp"
             android:layout_height="50dp"
             android:text="제출"

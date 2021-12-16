@@ -1,27 +1,49 @@
 package com.example.gymradar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RecommendActivity extends AppCompatActivity {
-    TextView textView;
-    private int latitude;
-    private int longitude;
+import java.util.ArrayList;
+import java.util.List;
 
-    String[] items = {"거리", "시설", "리뷰"};
+public class RecommendActivity extends AppCompatActivity {
+    EditText et1;
+    EditText et2;
+    EditText et3;
+    Button button_R;
+    private String latitude;
+    private String longitude;
+
+    String[] items = {"1순위", "2순위", "3순위"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recommend);
 
-        //textView = (TextView) findViewById(R.id.textView);
+        Intent getIntent = getIntent();
+        latitude = getIntent.getStringExtra("latitude");
+        longitude = getIntent.getStringExtra("longitude");
+
+        button_R = (Button) findViewById(R.id.btn_recommend);
+
+        et1 = (EditText) findViewById(R.id.equip_1);
+        et2 = (EditText) findViewById(R.id.equip_2);
+        et3 = (EditText) findViewById(R.id.equip_3);
+
+        List<String> equipList= new ArrayList<String>();
+        equipList.add(et1.getText().toString());
+        equipList.add(et2.getText().toString());
+        equipList.add(et3.getText().toString());
 
         Spinner spinner1 = (Spinner) findViewById(R.id.spinner_1);
         Spinner spinner2 = (Spinner) findViewById(R.id.spinner_2);
@@ -38,37 +60,19 @@ public class RecommendActivity extends AppCompatActivity {
         spinner3.setAdapter(adapter);
 
         // 스피너에서 선택 했을 경우 이벤트 처리
-        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        button_R.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               // textView.setText(items[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //textView.setText("선택 : ");
-            }
-        });
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-              //  textView.setText(items[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //textView.setText("선택 : ");
-            }
-        });
-        spinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               // textView.setText(items[position]);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                //textView.setText("선택 : ");
+            public void onClick(View v) {
+                Intent intent = new Intent(RecommendActivity.this, RecommendResultActivity.class);
+                intent.putExtra("latitude", latitude);
+                intent.putExtra("longitude", longitude);
+                intent.putExtra("equip_1", et1.getText().toString());
+                intent.putExtra("equip_2", et1.getText().toString());
+                intent.putExtra("equip_3", et1.getText().toString());
+                intent.putExtra("distance", spinner1.getSelectedItem().toString());
+                intent.putExtra("rating", spinner2.getSelectedItem().toString());
+                intent.putExtra("equip", spinner3.getSelectedItem().toString());
+                startActivity(intent);
             }
         });
     }

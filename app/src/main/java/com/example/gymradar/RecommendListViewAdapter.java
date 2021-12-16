@@ -14,12 +14,12 @@ import java.util.List;
 public class RecommendListViewAdapter extends BaseAdapter {
 
     private Context context;
-    private List<Integer> list;
+    private List<String> list;
     private LayoutInflater inflate;
     private ViewHolder viewHolder;
 
 
-    public RecommendListViewAdapter(List<Integer> list, Context context){
+    public RecommendListViewAdapter(List<String> list, Context context){
         this.list = list;
         this.context = context;
         this.inflate = LayoutInflater.from(context);

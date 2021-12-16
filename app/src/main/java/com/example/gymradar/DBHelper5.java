@@ -35,4 +35,17 @@ public class DBHelper5 extends SQLiteOpenHelper {
         db.close();
     }
 
+    public float getRatingEv(int id){
+        SQLiteDatabase db = getReadableDatabase();
+        float result = 0; // DB에 있는 데이터를 쉽게 처리하기 위해 Cursor를 사용하여 테이블에 있는 모든 데이터 출력
+        int count = 0;
+        Cursor cursor = db.rawQuery("SELECT * FROM review Where center_id =" + id + "", null);//모든 데이터를 가져온다. select 문에는 일반적으로 Cursor을 사용
+        while (cursor.moveToNext()) {
+            result += cursor.getInt(3);
+            count++;
+        }
+        result = result/count;
+        return result;
+    }
+
 }

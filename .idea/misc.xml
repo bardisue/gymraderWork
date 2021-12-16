@@ -11,28 +11,18 @@
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_insert_info.xml" value="0.2046875" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_login.xml" value="0.2046875" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_main.xml" value="0.2046875" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_recommend.xml" value="0.25" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_recommendresult.xml" value="0.2046875" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_register.xml" value="0.2046875" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_review.xml" value="0.1828125" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/activity_search.xml" value="0.2046875" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/eqmodi_listview.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/equipment_listview.xml" value="0.35643115942028986" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/program_listview.xml" value="0.35643115942028986" />
+        <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/review_listview.xml" value="0.1828125" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/layout/row_listview.xml" value="0.2046875" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/menu/add.xml" value="0.19739583333333333" />
         <entry key="..\:/Users/PARKBEONGJUN/AndroidStudioProjects/GymRadar-main/app/src/main/res/menu/main.xml" value="0.19739583333333333" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_add.xml" value="0.1296875" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_editequipment.xml" value="0.1296875" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_editprogram.xml" value="0.1" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_info.xml" value="0.14114583333333333" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_insert_info.xml" value="0.25364583333333335" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_recommend.xml" value="0.25364583333333335" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_register.xml" value="0.25364583333333335" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/activity_review.xml" value="0.1" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/eqmodi_listview.xml" value="0.12604166666666666" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/equipment_listview.xml" value="0.14114583333333333" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/pgmodi_listview.xml" value="0.1" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/program_listview.xml" value="0.14114583333333333" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/review_listview.xml" value="0.25364583333333335" />
-        <entry key="..\:/gymraderWork/app/src/main/res/layout/row_listview.xml" value="0.25364583333333335" />
       </map>
     </option>
   </component>

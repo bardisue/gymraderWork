@@ -41,4 +41,16 @@ public class DBHelper4 extends SQLiteOpenHelper {
         db.execSQL("DELETE FROM equipment WHERE center_id = " + center_id +"");
         db.close();
     }
+
+    public boolean hasEquip(String equip, int id){
+        SQLiteDatabase db = getReadableDatabase();
+        boolean result = false; // DB에 있는 데이터를 쉽게 처리하기 위해 Cursor를 사용하여 테이블에 있는 모든 데이터 출력
+        Cursor cursor = db.rawQuery("SELECT * FROM equipment Where center_id =" + id + "", null);//모든 데이터를 가져온다. select 문에는 일반적으로 Cursor을 사용
+        while (cursor.moveToNext()) {
+            if(cursor.getString(2).equals(equip)){
+                result = true;
+            }
+        }
+        return result;
+    }
 }
