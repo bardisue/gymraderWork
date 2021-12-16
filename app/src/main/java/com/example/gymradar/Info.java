@@ -24,6 +24,7 @@ public class Info extends AppCompatActivity {
     TextView center_name;
     ListView program_list;
     ListView equipment_list;
+    ListView review_list;
     Button editProgram;
     Button editEquipment;
     Button writeReview;
@@ -35,6 +36,7 @@ public class Info extends AppCompatActivity {
         center_name = findViewById(R.id.center_name);
         program_list = findViewById(R.id.program_list);
         equipment_list = findViewById(R.id.equipment_list);
+        review_list = findViewById(R.id.review_list);
         editProgram = findViewById(R.id.editProgram);
         editEquipment = findViewById(R.id.editEquipment);
         writeReview = findViewById(R.id.review);
@@ -71,12 +73,11 @@ public class Info extends AppCompatActivity {
        reviewDBHelper = new DBHelper5(this, 1);
        reviewDB = reviewDBHelper.getReadableDatabase();
        cursor = reviewDB.rawQuery("SELECT * FROM review WHERE center_id = " + center_id +"", null);
-        //ReviewAdapter review_adapter = new ReviewAdapter();
-        //while(cursor.moveToNext()){
-        //    review_adapter.addItemToList(cursor.getString(2), cursor.getInt(3));
-        //}
-        //review_list.setAdapter(review_adapter);
-
+        ReviewAdapter review_adapter = new ReviewAdapter();
+        while(cursor.moveToNext()){
+            review_adapter.addItemToList(cursor.getString(2), cursor.getFloat(3), cursor.getString(4));
+        }
+        review_list.setAdapter(review_adapter);
 
 
         editProgram.setOnClickListener(new View.OnClickListener() {
