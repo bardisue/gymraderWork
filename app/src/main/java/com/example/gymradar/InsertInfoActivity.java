@@ -1,11 +1,14 @@
 package com.example.gymradar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -65,5 +68,17 @@ public class InsertInfoActivity extends AppCompatActivity implements MapReverseG
 
     private void onFinishReverseGeoCoding(String result) {
         addr = result;
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_cancel:
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
     private static final String LOG_TAG = "MainActivity";
     public static String loginedId;
     public static String loginedName;
+    static boolean isLogined;
     private MapView mapView;
     private MapPoint mCurrentLocation = null;
     private ViewGroup mapViewContainer;
@@ -42,10 +43,7 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
         loginedId = secondIntent.getStringExtra("UserEmail");//로그인한 이메일
         loginedName = secondIntent.getStringExtra("UserName");//로그인한 이름
         if(loginedId != null){
-            Toast.makeText(this.getApplicationContext(),loginedName+"님 환영합니다!", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(this.getApplicationContext(),"guest로 로그인하셨습니다.", Toast.LENGTH_SHORT).show();
+            isLogined = true;
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -189,15 +187,6 @@ public class MainActivity extends AppCompatActivity implements MapView.MapViewEv
                 // TODO: 추천 받기
                 break;
 
-            case R.id.menu_review:
-                // TODO: 리뷰
-                break;
-            case R.id.add_data:
-                startActivity(new Intent(MainActivity.this, add.class));
-                break;
-            case R.id.current_location:
-                Toast.makeText(MainActivity.this, Double.toString(mCurrentLocation.getMapPointGeoCoord().latitude) + Double.toString(mCurrentLocation.getMapPointGeoCoord().longitude) , Toast.LENGTH_SHORT).show();
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

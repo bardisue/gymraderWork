@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -42,7 +45,7 @@ public class EditEquipment extends AppCompatActivity {
         addButton.setOnClickListener(new Button.OnClickListener(){
             @Override
             public void onClick(View v) {
-                adapter.addItemToList("eqname",0);
+                adapter.addItemToList("",0);
                 adapter.notifyDataSetChanged();
             }
         });
@@ -60,5 +63,18 @@ public class EditEquipment extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_cancel:
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
